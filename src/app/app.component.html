@@ -8,9 +8,9 @@
 
   <nav id="nav">
     <ul>
-      <li><a [routerLink]="['/home']">Home</a></li>
-      <li><a [routerLink]="['/productos']">Productos</a></li>
-      <li><a [routerLink]="['/crearProducto']">Crear producto</a></li>
+      <li><a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a></li>
+      <li><a [routerLink]="['/productos']" [routerLinkActive]="['activado']">Productos</a></li>
+      <li><a [routerLink]="['/crearProducto']" [routerLinkActive]="['activado']">Crear producto</a></li>
     </ul>
   </nav>
 
@@ -19,7 +19,7 @@
 
   <section id="main" style="margin-left: 20px;">
     <!-- Componente actual -->
-   <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </section>
 
   <footer id="footer" style="margin-left: 20px;">

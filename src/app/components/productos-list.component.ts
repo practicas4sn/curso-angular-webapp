@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
     templateUrl: "../views/productos-list.html"
 })
 
-export class ProductosListoComponent {
+export class ProductosListComponent {
     public titulo: string;
 
     constructor(
