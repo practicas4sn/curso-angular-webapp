@@ -12,13 +12,15 @@ import { HomeComponent } from './components/home.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos-list.component';
+import { ProductoAddComponent } from './components/producto-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    ProductosListComponent
+    ProductosListComponent,
+    ProductoAddComponent
   ],
   imports: [
     BrowserModule,

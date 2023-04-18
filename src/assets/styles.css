@@ -75,3 +75,8 @@
     border-radius: 5px;
     background-color: #EFEDED;
 }
+
+#form-producto label {
+    margin-top: 10px;
+
+}
