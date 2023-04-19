@@ -21,6 +21,10 @@ export class ProductoService {
         return this._http.get(this.url + 'productos', { observe: 'response' });
     }
 
+    getProducto(id: number) {
+        return this._http.get(this.url + 'producto/' + id, { observe: 'response' });
+    }
+
     // añadir productos
     addProducto(producto: Producto) {
         let json = JSON.stringify(producto);
