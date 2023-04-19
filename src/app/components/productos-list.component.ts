@@ -24,11 +24,12 @@ export class ProductosListComponent {
 
     ngOnInit() {
         this._productoService.getProductos().subscribe(
-            (response: HttpResponse<any>) => {
-                if (response.body.code != 200) {
-                    console.log(response);
-                } else {
+            (response: any) => {
+                if (response.body.code == 200) {
+                    console.log("Accedemos a productos");
                     this.productos = response.body.data;
+                } else {
+                    console.log(response);
                 }
             },
             (error) => {

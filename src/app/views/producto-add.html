@@ -1,17 +1,28 @@
 <h3>{{titulo}}</h3>
 <hr>
 
+<!-- Validaciones label: Que tengan un campo valido o que han sido tocadas y luego borradas. Tienen required -->
 <form #formProducto="ngForm" (ngSubmit)="onSubmit()" class="col-lg-4" id="form-producto">
     <label for="">Nombre
-     <span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El campo nombre es obligatorio</span>   
+        <span *ngIf="!nombre.valid && nombre.touched" class="badge bg-danger">El campo nombre es obligatorio</span>   
     </label>
     <input #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" type="text" class="form-control" required>
 
-    <label for="">Descripcion</label><textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" type="text" class="form-control" required></textarea>
+    <label for="">Descripcion
+        <span *ngIf="!descripcion.valid && descripcion.touched" class="badge bg-danger">El campo descripcion es obligatorio</span>   
+    </label>
+    <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" type="text" class="form-control" required></textarea>
 
-    <label for="">Precio</label><input #precio="ngModel" name="precio" [(ngModel)]="producto.precio" type="text" class="form-control" required>
+    <label for="">Precio
+        <span *ngIf="!precio.valid && precio.touched" class="badge bg-danger">El precio no es correcto</span>   
+    </label>
+    <input #precio="ngModel" name="precio" [(ngModel)]="producto.precio" type="text" class="form-control" required pattern="[0-9]+">
 
-    <label for="">Imagen</label><input type="file" class="form-control">
+    <label for="">Imagen</label>
+    <input type="file" class="form-control">
+
     <br>
-    <input type="submit" value="{{titulo}}" class="btn btn-success">
+    
+    <!-- Añadimos validacion para que se desactive el boton si algo falla -->
+    <input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success">
 </form>
