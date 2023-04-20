@@ -62,13 +62,14 @@
     text-decoration: none !important;
     background: #d6c496 !important;
     border-top: 4px solid #d62e2e !important;
+    color: #283d3e;
 }
 
 #footer {
     margin-top: 30px;
     border-top: 1px solid #eee;
     padding-top: 10px;
-    color: gray;
+    color: #283d3e;
 }
 
 #main .jumbotron {
@@ -90,6 +91,8 @@
     display: block;
     max-width: 100%;
     object-fit: contain;
+    border: 2px solid;
+    border-radius: 10px;
 }
 
 .imagen_relleno {
@@ -110,4 +113,5 @@
     border-radius: 10px;
     padding: 7px;
     margin: 3px;
+    background-color: #998c6c;
 }
