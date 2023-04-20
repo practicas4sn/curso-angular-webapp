@@ -34,6 +34,19 @@ export class ProductoService {
         return this._http.post(this.url + 'productos', params, { headers: headers, observe: 'response' }).pipe(map((response: HttpResponse<any>) => { return response.body; }));
     }
 
+    editProducto(id: number, producto: Producto): Observable<any> {
+        let json = JSON.stringify(producto);
+        let params = 'json=' + json;
+        let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+
+        return this._http.post<any>(this.url + 'update-producto/' + id, params, { headers: headers }).pipe(map(response => response)
+        );
+    }
+
+    deleteProducto(id: number): Observable<any> {
+        return this._http.get(this.url + 'delete-producto/' + id).pipe(map(response => response));
+    }
+
     // subida de archivos
     makeFileRequest(url: string, params: Array<string>, files: Array<File>): Observable<any> {
         const formData: FormData = new FormData();

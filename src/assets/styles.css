@@ -2,15 +2,16 @@
     margin-top: 30px;
     border: 1px solid #ccc;
     border-radius: 2px;
-    box-shadow: 0px 2px 5px gray;
+    box-shadow: 0px 2px 5px #d6c496;
     overflow: hidden;
+    background: #d6c496;
 }
 
 #header {
     display: flex;
     margin: none;
     align-items: center;
-    background: #E03137;
+    background: #d62e2e;
     color: white;
     height: 90px;
     line-height: 90px;
@@ -26,7 +27,7 @@
     overflow: hidden;
     padding: 0px;
     margin: 0px;
-    background-color: #E88A76;
+    background-color: #283d3e;
 }
 
 #nav ul {
@@ -53,13 +54,14 @@
 
 #nav ul li a:hover {
     text-decoration: none;
-    background: grey;
+    background: #d6c496;
+    color: #283d3e;
 }
 
 .activado {
     text-decoration: none !important;
-    background: grey !important;
-    border-bottom: 4px solid black !important;
+    background: #d6c496 !important;
+    border-top: 4px solid #d62e2e !important;
 }
 
 #footer {

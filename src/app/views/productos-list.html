@@ -18,12 +18,17 @@
                 </div>
                 <div>
                     <h3>{{producto.nombre}}</h3>
-                    <p>{{producto.precio}} €</p>
-                    <p class="d-flex justify-content-center">
+                    <p>{{producto.precio}}€</p>
+                    <div class="d-flex justify-content-center" *ngIf="confirmado != producto.id">
                         <a [routerLink]="['/producto', producto.id]" class="btn btn-secondary me-2">Ver</a>
-                        <a href="#" class="btn btn-secondary me-2">Editar</a>
-                        <a href="#" class="btn btn-danger">Borrar</a>
-                    </p>
+                        <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-secondary me-2">Editar</a>
+                        <a class="btn btn-danger" (click)="borrarConfirm(producto.id)">Borrar</a>
+                    </div>
+                    <div class="seguro" *ngIf="confirmado == producto.id">
+                        <p>¿Estas seguro?</p>
+                        <a class="btn btn-danger me-2" (click)="onDeleteProducto(producto.id)">Eliminar</a>
+                        <a class="btn btn-secondary me-2" (click)="cancelarConfirm()">Cancelar</a>
+                    </div>
                 </div>
             </div>
         </div>
